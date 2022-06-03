@@ -77,7 +77,7 @@ nav.scroll {
 }
 
 nav.scroll .logo path {
-  background-color: black;
+  background-color: red;
   fill: white;
 }
 
@@ -335,4 +335,3 @@ body.menu-expanded .logo button path {
   margin-block: 1.6rem;
 }
 /*=========ABOUT================================*/
-
