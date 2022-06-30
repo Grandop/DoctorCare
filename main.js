@@ -15,7 +15,7 @@ function showNavOnScroll() {
 }
 
 function showBackToTopButtonOnScroll() {
-  if (scrollY > 800) {
+  if (scrollY > 600) {
     backToTopButton.classList.add('show')
   } else {
     backToTopButton.classList.remove('show')
@@ -44,7 +44,12 @@ ScrollReveal({
   distance: '30px',
   duration: 700
 }).reveal(`
-#home, #home img, #home .stats, 
-#services,#services header,#services .card,
-#about,#about header, #about .content,
-#contact,#contact .wrapper,#contact .content`)
+  #home, 
+  #home img, 
+  #home .stats, 
+  #services,
+  #services header,
+  #services .card
+  #about, 
+  #about header, 
+  #about .content`)
