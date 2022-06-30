@@ -1,11 +1,12 @@
 window.addEventListener('scroll', onScroll)
+const navigation = document.querySelector('#navigation')
 
-onScroll()
 function onScroll() {
   showNavOnScroll()
   showBackToTopButtonOnScroll()
 }
 
+onScroll()
 function showNavOnScroll() {
   if (scrollY > 0) {
     navigation.classList.add('scroll')
