@@ -500,6 +500,12 @@ footer .social-links {
     font-size: 4rem;
     line-height: 5.2rem;
   }
+
+  .menu ul:nth-child(1) {
+    display: flex;
+    flex-direction: row;
+  }
+
   /*====NAVIGATION================================*/
 
   /*====RESET================================*/
