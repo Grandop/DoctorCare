@@ -4,6 +4,37 @@ const navigation = document.querySelector('#navigation')
 function onScroll() {
   showNavOnScroll()
   showBackToTopButtonOnScroll()
+
+  activateMenuAtCurrentSection(home)
+  activateMenuAtCurrentSection(services)
+  activateMenuAtCurrentSection(about)
+  activateMenuAtCurrentSection(contact)
+}
+
+function activateMenuAtCurrentSection(section) {
+  const targetLine = scrollY + innerHeight / 2
+
+  // verificar se a seção passou da linha
+  // quais dados vou precisar?
+  const sectionTop = section.offsetTop
+  const sectionHeight = section.offsetHeight
+  const sectionTopReachOrPssedTargetLine = targetLine >= sectionTop
+
+  //verificar se a base está abaixo da linha alvo
+  const sectionEndsAt = sectionTop + sectionHeight
+  const sectionEndPassedTargetLine = sectionEndsAt <= targetLine
+
+  //limites da seção
+  const sectionBoundaries =
+    sectionTopReachOrPssedTargetLine && !sectionEndPassedTargetLine
+  
+  const sectionId = section.getAttribute('id')
+  const menuElement = document.querySelector(`.menu a[href*=${sectionId}]`)
+
+  menuElement.classList.remove('active')
+  if (sectionBoundaries) {
+    menuElement.classList.add('active')
+  } 
 }
 
 onScroll()
@@ -30,15 +61,6 @@ function openMenu() {
 function closeMenu() {
   document.body.classList.remove('menu-expanded')
 }
-
-/*function ScrollReveal() {
-  var options = {
-    reveal: function() {}
-  }
-  return options
-}
-
-var options = ScrollReveal()*/
 
 ScrollReveal({
   origin: 'top',
